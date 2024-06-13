@@ -1,0 +1,12 @@
+{
+  "name": "mic-level-meter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @neutralinojs/neu run"
+  },
+  "keywords": [],
+  "author": "jay-es",
+  "license": "MIT"
+}
