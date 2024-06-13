@@ -11,11 +11,14 @@
   ],
   "modes": {
     "window": {
-      "title": "mic-level-meter",
+      "title": "Mic Level Meter",
       "width": 800,
       "height": 500,
-      "minWidth": 400,
-      "minHeight": 200,
+      "maxWidth": 40,
+      "maxHeight": 800,
+      "borderless": false,
+      "resizable": true,
+      "enableInspector": true,
       "icon": "/www/icon.png"
     }
   },

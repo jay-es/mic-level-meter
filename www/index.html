@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello Neutralinojs</title>
+    <meta charset="UTF-8" />
+    <title>Mic Level Meter</title>
     <style>
-      body { background-color: white; }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .led {
+        width: 16px;
+        height: 32px;
+        opacity: 0.75;
+
+        &:nth-child(n + 5) {
+          background-color: lime;
+        }
+        &:nth-child(-n + 4) {
+          background-color: orange;
+        }
+        &:first-child {
+          background-color: red;
+        }
+
+        &.off {
+          filter: brightness(75%);
+          opacity: 0.25;
+        }
+      }
     </style>
   </head>
   <body>
-    It works 🚀
+    <div class="wrapper">
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+    </div>
+
     <script type="module" src="/client.mjs"></script>
   </body>
 </html>
