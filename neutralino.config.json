@@ -23,7 +23,6 @@
     "binaryName": "mic-level-meter",
     "resourcesPath": "/www/",
     "extensionsPath": "/extensions/",
-    "clientLibrary": "/www/neutralino.js",
     "binaryVersion": "5.2.0",
     "clientVersion": "5.2.0"
   }

@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "jay-es",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.2.0"
+  }
 }
