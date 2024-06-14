@@ -2,14 +2,14 @@
   "name": "mic-level-meter",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "dev": "npx @neutralinojs/neu run"
+    "dev": "electron . --devtools"
   },
   "keywords": [],
   "author": "jay-es",
   "license": "MIT",
   "devDependencies": {
-    "@neutralinojs/neu": "^11.2.0"
+    "electron": "^31.0.1"
   }
 }
