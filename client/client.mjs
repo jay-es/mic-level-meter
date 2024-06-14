@@ -10,6 +10,8 @@ const analyser = audioContext.createAnalyser();
 const microphone = audioContext.createMediaStreamSource(stream);
 
 // AnalyserNode を設定
+analyser.minDecibels = -60; //default: -100
+analyser.maxDecibels = -25; //default: -30
 analyser.fftSize = 256;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
@@ -17,20 +19,20 @@ const dataArray = new Uint8Array(bufferLength);
 // マイク入力を AnalyserNode に接続
 microphone.connect(analyser);
 
+// 描画対象の要素と個数を取得
+const boxes = document.querySelectorAll(".led");
+const levels = boxes.length;
+
 // 音量データを取得し、可視化
-function loop() {
-  analyser.getByteTimeDomainData(dataArray);
+function draw() {
+  analyser.getByteFrequencyData(dataArray);
 
-  // ここでデータを処理して可視化
-  let sum = 0;
-  for (let i = 0; i < bufferLength; i++) {
-    sum += dataArray[i];
-  }
-  const average = sum / bufferLength;
-  const volume = Math.max(0, (average - 128) * 2); // 0〜128 の範囲に正規化
+  const max = Math.max(...dataArray);
+  const normalizedVolume = Math.floor((max / 255) * levels);
 
-  console.log("音量:", volume); // 音量をコンソールに出力（ここを可視化に置き換え）
+  Array.from(boxes).forEach((el, i) => {
+    el.classList.toggle("off", levels - i > normalizedVolume);
+  });
 }
 
-// requestAnimationFrame(loop);
-setInterval(loop, 100);
+setInterval(draw, 100);
