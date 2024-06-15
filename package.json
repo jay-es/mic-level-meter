@@ -4,11 +4,14 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev": "nodemon --exec 'electron . --devtools' --watch ./main.js"
+    "dev": "nodemon --exec \"electron . --devtools\" --watch ./main.js"
   },
   "keywords": [],
   "author": "jay-es",
   "license": "MIT",
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
   "devDependencies": {
     "electron": "^31.0.1",
     "nodemon": "^3.1.3"
