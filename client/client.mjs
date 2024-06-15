@@ -11,7 +11,8 @@ const microphone = audioContext.createMediaStreamSource(stream);
 
 // AnalyserNode を設定
 analyser.minDecibels = -60; //default: -100
-analyser.maxDecibels = -25; //default: -30
+analyser.maxDecibels = -20; //default: -30
+analyser.smoothingTimeConstant = 0.5; // default: 0.8
 analyser.fftSize = 256;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);

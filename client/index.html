@@ -6,16 +6,18 @@
     <style>
       body {
         -webkit-app-region: drag;
+        background-color: #0009;
       }
       .wrapper {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        align-items: center;
+        gap: 2px;
       }
       .led {
-        width: 10px;
-        height: 32px;
-        border-radius: 4px;
+        width: 16px;
+        height: 6px;
+        border-radius: 1px;
         opacity: 0.75;
 
         &:nth-child(n + 5) {
@@ -29,7 +31,7 @@
         }
 
         &.off {
-          filter: brightness(75%);
+          filter: brightness(50%);
           opacity: 0.25;
         }
       }

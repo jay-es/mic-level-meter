@@ -4,7 +4,7 @@ function createWindow() {
   const win = new BrowserWindow({
     title: "Mic Level Meter",
     width: 32,
-    height: 680,
+    height: 142,
     alwaysOnTop: true,
     resizable: false,
     maximizable: false,
